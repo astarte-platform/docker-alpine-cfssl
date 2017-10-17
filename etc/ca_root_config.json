@@ -1,17 +1,25 @@
 {
   "signing": {
     "default": {
-      "usages": [
-        "digital signature",
-        "cert sign",
-        "crl sign",
-        "signing"
-      ],
-      "expiry": "262800h",
-      "ca_constraint": {
-        "is_ca": true,
-        "max_path_len": 0,
-        "max_path_len_zero": true
+      "expiry": "1440h"
+    },
+    "profiles": {
+      "device": {
+        "usages": [
+          "signing",
+          "key encipherment",
+          "client auth"
+        ],
+        "expiry": "1440h"
+      },
+
+      "test-short-expiry": {
+        "usages": [
+          "signing",
+          "key encipherment",
+          "client auth"
+        ],
+        "expiry": "1s"
       }
     }
   }
